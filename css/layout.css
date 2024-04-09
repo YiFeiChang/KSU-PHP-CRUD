@@ -606,3 +606,72 @@ a.btn-del {
 a:hover.btn-del {
     background: #D54D4D;
 }
+
+
+/* 詢問視窗 */
+#MsgYesNo {
+    z-index: 2001;
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    background: #FFF;
+    border-radius: 5px;
+    border: 5px solid #a10000;
+    box-shadow: 0px 0px 10px #000;
+    display: none;
+}
+
+#MsgYesNo .MsgArea {
+    margin: 10px;
+}
+
+#MsgYesNo .tit {
+    font-size: 17pt;
+    color: #0066FF;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #727272;
+}
+
+#MsgYesNo .imgs {
+    float: left;
+    height: 70px;
+    margin-right: 10px;
+}
+
+#MsgYesNo .msg {
+    height: 110px;
+    line-height: 30px;
+    padding: 5px 0px 0px 10px;
+}
+
+#MsgYesNo .btn {
+    text-align: right;
+}
+
+#MsgYesNo a.btnYes {
+    padding: 5px 15px;
+    background: #0066FF;
+    color: #FFF;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
+#MsgYesNo a:hover.btnYes {
+    background: #3384FF;
+}
+
+#MsgYesNo a.btnNo {
+    padding: 5px 15px;
+    background: #C40000;
+    color: #FFF;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
+#MsgYesNo a:hover.btnNo {
+    background: #CF3333;
+}

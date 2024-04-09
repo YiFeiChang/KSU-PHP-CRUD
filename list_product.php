@@ -42,7 +42,8 @@
                         echo '<td>' . $row[$i] . '</td>';
                     }
                     echo "<td><a title='修改' class='btn-vi' href='edit_product.php?id=" . $row[0] . "'>修改</a></td>";
-                    echo "<td><a title='刪除' class='btn-del' href='delete_product.php?id=" . $row[0] . "'>刪除</a></td>";
+                    // echo "<td><a title='刪除' class='btn-del' href='delete_product.php?id=" . $row[0] . "'>刪除</a></td>";
+                    echo "<td><a title='刪除' class='btn-del' onclick='alertDel({$row[0]});MsgYesNoOn();'>刪除</a></td>";
                     echo "</tr>";
                 }
             }
@@ -55,4 +56,28 @@
 </div><!-- bodyArea End -->
 <!-- 版身結束 -->
 
-<?php require("php/layout_footer.php"); ?>
+<?php
+### 訊息視窗 ###
+if (isset($_GET['Msg'])) {
+    if ($_GET['Msg'] == 1) {
+        echo "
+        <script>
+        $(document).ready(function(){
+            MsgAlertOn();
+            $('.MsgTxt').text('資料已完成新增。');
+        });
+        </script>";
+    }
+    if ($_GET['Msg'] == 2) {
+        echo "
+        <script>
+        $(document).ready(function(){
+            MsgAlertOn();
+            $('.MsgTxt').text('指定的資料已刪除。');
+        });
+        </script>";
+    }
+}
+
+require("php/layout_footer.php");
+?>

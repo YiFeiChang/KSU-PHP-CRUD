@@ -34,6 +34,37 @@
 		</li>
 	</div>
 </div>
+<div id="MsgYesNo">
+	<div class="MsgArea">
+		<li class="tit">系統訊息確認視窗</li><img src="images/alert.png" class="imgs">
+		<li class="msg"><span class="MsgTxt"></span></li>
+		<li class="btn">
+			<a class="btnYes" onclick="MsgYesNoOff();">確定<span class="MsgTxtBtnY"></span></a>
+			<a class="btnNo" onclick="MsgYesNoOff();">取消<span class="MsgTxtBtnN"></span></a>
+		</li>
+	</div>
+</div>
 
-	</body>
+</body>
+<script>
+	function alertDel(id) {
+		$('.MsgTxt').text('您確定要刪除？');
+		$('.btnYes').click(function() {
+			location.href = 'delete_product.php?id=' + id;
+		});
+	}
+
+	/* 詢問視窗開啟 */
+	function MsgYesNoOn() {
+		$('#MsgBg').fadeIn(500); //背景淡入
+		$("#MsgYesNo").show(500); //詢問視窗展開
+	};
+
+	/* 詢問視窗關閉 */
+	function MsgYesNoOff() {
+		$('#MsgBg').fadeOut(500); //背景淡出
+		$("#MsgYesNo").hide(500); //詢問視窗收回
+	};
+</script>
+
 </html>
